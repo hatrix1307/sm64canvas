@@ -50,6 +50,15 @@
       justify-content: space-between;
     }
 
+    .rec {
+      font-size: 20;
+      border-radius: 8px;
+      border: none;
+      color: var(--txtcolor);
+      font-size: 30px;
+      justify-content: space-between;
+    }
+
     .reload {
       font-size: 20;
       border-radius: 8px;
@@ -95,7 +104,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 635px;
+      height: 660px;
       background:transparent;
     }
 
@@ -104,6 +113,8 @@
       float: center;
       width: 100%;
       height: 100%;
+      height: 90vh;
+      width: 100vw;
       text-align: center;
       border-radius: 5px;
     }
@@ -303,7 +314,7 @@
     <p style="font-size:10px;">(if it gives you the option, press register proxy twice)</p>
   </center>
   <br>
-  <div id="game-container" style="border-radius: 20px; background: transparent; height: 500px; margin-bottom:50px;">
+  <div id="game-container" style="border-radius: 20px; background: transparent; height: 600px; margin-bottom:50px;">
     <div class="iframe">
       <iframe class="abc" id="gameFramey"></iframe>
       <br>
@@ -317,6 +328,7 @@
         <a style="color: var(--txtcolor); background: transparent; text-decoration: none; font-size: 30px;  margin: 0px 10px;" href="/english/"><i class="fa-solid fa-angle-left"></i> Back</a>
         <button onclick="reload()" style="background: transparent; width: 50px; right: 0;   margin: 0px 10px;" class="reload"><i class="fa-solid fa-rotate-right"></i></button>
       <button onclick="toggleFullscreen()" style="background: transparent; width: 50px; right: 0;  margin: 0px 10px;" class="fullscreen"><i class="fa-solid fa-expand"></i></button>
+      <button onclick="window.open('/record.html');" style="background: transparent; width: 50px; right: 0;  margin: 0px 10px;" class="fullscreen"><i class="fa-solid fa-camera"></i></button>
       </div>
   </div>
   </div>
@@ -328,10 +340,10 @@
     const file = urlParams.get('book');
     const type = urlParams.get('type')
     if (type == "swf") {
-      document.getElementById('gameFramey').src = 'https://cdn.minnetonkamiddleschooleast.onlinegalacticnetwork/gfiles/master/gfiles/flash/index.html?swf=' + file
+      document.getElementById('gameFramey').src = 'https://cdn.brawlstarrer6.workers.dev/GalacticNetwork/gfiles/master/gfiles/flash/index.html?swf=' + file
     }
     else {
-      document.getElementById('gameFramey').src = "https://cdn.free-medicare.us.kg/galacticnetwork/gfiles/master/gfiles/html5/" + file + '/index.html'
+      document.getElementById('gameFramey').src = "https://learn-with.jskjsv6.workers.dev/galacticnetwork/gfiles/master/gfiles/html5/" + file + '/index.html'
     }
   </script>
   <script>
@@ -372,5 +384,5 @@
 <script src="/assets/scripts/themes.js"></script>
 <script src="/assets/scripts/panic.js"></script>
 <script src="/assets/scripts/rc.js"></script>
-
+<script src="/assets/scripts/2auto.js"></script>
 </html>

@@ -3,8 +3,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
   contextMenu.id = "customContextMenu";
   contextMenu.style.position = "absolute";
   contextMenu.style.display = "none";
-  contextMenu.style.backgroundColor = "var(--navbar)";
-  contextMenu.style.border = "1px solid #ccc";
+  contextMenu.style.backgroundColor = "var(--navbar, #111);";
+  contextMenu.style.boxShadow = "var(--txtcolor);";
   contextMenu.style.zIndex = "1000";
 
   const aboutBlank = document.createElement("div");
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   aboutBlank.style.cursor = "pointer";
   aboutBlank.style.color = "var(--txtcolor)";
   aboutBlank.onclick = function () {
-    buffedAB();
+    aboutBlankFunction();
     contextMenu.style.display = "none";
   };
 
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   buffedBlank.style.cursor = "pointer";
   buffedBlank.style.color = "var(--txtcolor)";
   buffedBlank.onclick = function () {
-    aboutBlankFunction();
+    buffedAB();
     contextMenu.style.display = "none";
   };
 
@@ -48,6 +48,16 @@ document.addEventListener("DOMContentLoaded", (event) => {
     contextMenu.style.display = "none";
   };
 
+  const chat = document.createElement("div");
+  chat.innerHTML = '<i class="fa-solid fa-comments"></i> Enable Chat';
+  chat.style.padding = "8px";
+  chat.style.cursor = "pointer";
+  chat.style.color = "var(--txtcolor)";
+  chat.onclick = function () {
+    chatFunction();
+    contextMenu.style.display = "none";
+  };
+
   const viewAllSettings = document.createElement("div");
   viewAllSettings.innerHTML =
     '<i class="fa-solid fa-users-gear"></i> View All Settings';
@@ -63,6 +73,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   contextMenu.appendChild(buffedBlank);
   contextMenu.appendChild(panic);
   contextMenu.appendChild(inspect);
+  contextMenu.appendChild(chat);
   contextMenu.appendChild(viewAllSettings);
   document.body.appendChild(contextMenu);
 
@@ -146,8 +157,34 @@ document.addEventListener("DOMContentLoaded", (event) => {
   function inspectFunction() {
     (function () {
       var a = document.createElement("script");
-      a.src = "https://cdn.jsdelivr.net/gh/GalacticNetwork/Avo/avo.min.js";
+      a.src = "https://cdn.jsdelivr.net/gh/GalacticNetwork/Avo/avo.js";
       document.body.appendChild(a);
     })();
   }
 });
+
+function chatFunction() {
+  alert('Use the dash (-) key to toggle chat on and off!');
+
+  const iframe = document.createElement('iframe');
+  iframe.style.position = 'fixed';
+  iframe.style.top = '10px';
+  iframe.style.left = '10px';
+  iframe.style.width = '35%';
+  iframe.style.height = '91%';
+  iframe.style.border = '1px solid var(--txtcolor)';
+  iframe.style.zIndex = '1000';
+  iframe.style.display = 'none';
+  iframe.src = '/science/3/';
+  document.body.appendChild(iframe);
+
+  function toggleIframe() {
+    iframe.style.display = iframe.style.display === 'none' ? 'block' : 'none';
+  }
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === '-') {
+      toggleIframe();
+    }
+  });
+}
