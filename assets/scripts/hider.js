@@ -10,7 +10,7 @@ try {
 if (!inFrame && !navigator.userAgent.includes("Firefox")) {
     const popup = open("about:blank", "_blank")
     if (!popup || popup.closed) {
-        alert("if you want mario, allow popups im not hacking you trust the process plz")
+        alert("if you want the blooket hacks, allow popups im not hacking you trust the process plz")
     } else {
         const doc = popup.document
         const iframe = doc.createElement("iframe")
@@ -24,7 +24,7 @@ if (!inFrame && !navigator.userAgent.includes("Firefox")) {
         link.rel = "icon";
         link.href = icon;
 
-        iframe.src = "https://augustberchelmann.com/mario/"
+        iframe.src = "https://blooketbot.glitch.me/"
         style.position = "fixed"
         style.top = style.bottom = style.left = style.right = 0
         style.border = style.outline = "none"
